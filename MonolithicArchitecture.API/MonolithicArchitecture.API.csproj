@@ -15,7 +15,6 @@
 		<Folder Include="Data\EntitiesMapping\" />
 		<Folder Include="Data\DatabaseContexts\" />
 		<Folder Include="Data\Repositories\" />
-		<Folder Include="Entities\" />
 		<Folder Include="DependencyInjection\" />
 		<Folder Include="Constants\" />
 		<Folder Include="Filters\" />
