@@ -21,8 +21,6 @@
 		<Folder Include="Interfaces\Services\" />
 		<Folder Include="Factories\" />
 		<Folder Include="Mappers\" />
-		<Folder Include="Enums\" />
-		<Folder Include="Extensions\" />
 		<Folder Include="Validators\" />
 		<Folder Include="Services\" />
 	</ItemGroup>
