@@ -1,4 +1,8 @@
-﻿namespace MonolithicArchitecture.API.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using MonolithicArchitecture.API.Data.DatabaseContexts;
+using MonolithicArchitecture.API.Factories;
+
+namespace MonolithicArchitecture.API.DependencyInjection;
 
 public static class DependencyInjectionHandler
 {
@@ -6,7 +10,15 @@ public static class DependencyInjectionHandler
     {
         services.AddCorsDependencyInjection();
 
+        services.AddDbContext<AppDbContext>(options =>
+        {
+            options.UseNpgsql(configuration.GetConnectionString());
+            options.EnableSensitiveDataLogging();
+            options.EnableDetailedErrors();
+        });
+
         services.AddSettingsDependencyInjection();
         services.AddFilterDependencyInjection();
+        services.AddRepositoriesDependencyInjection();
     }
 }
