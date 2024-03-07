@@ -10,4 +10,5 @@ public sealed class DoctorAttendant
     public Certification Certification { get; set; }
     public List<Schedule> Schedules { get; set; }
     public List<Speciality> Specialities { get; set; }
+    public List<AppointmentTime> Appointments { get; set; }
 }

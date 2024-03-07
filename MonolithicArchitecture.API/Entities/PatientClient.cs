@@ -6,4 +6,5 @@ public sealed class PatientClient
     public required string Address { get; set; }
 
     public ContactInfo ContactInfo { get; set; }
+    public List<AppointmentTime> Appointments { get; set; }
 }
