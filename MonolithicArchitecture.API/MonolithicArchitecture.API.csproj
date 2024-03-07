@@ -15,9 +15,7 @@
 		<Folder Include="Data\EntitiesMapping\" />
 		<Folder Include="Data\DatabaseContexts\" />
 		<Folder Include="Data\Repositories\" />
-		<Folder Include="Filters\" />
 		<Folder Include="Interfaces\Mappers\" />
-		<Folder Include="Interfaces\Settings\" />
 		<Folder Include="Interfaces\Repositories\" />
 		<Folder Include="Interfaces\Services\" />
 		<Folder Include="Middlewares\" />
@@ -27,7 +25,6 @@
 		<Folder Include="Extensions\" />
 		<Folder Include="Validators\" />
 		<Folder Include="Services\" />
-		<Folder Include="Settings\" />
 	</ItemGroup>
 
 </Project>
