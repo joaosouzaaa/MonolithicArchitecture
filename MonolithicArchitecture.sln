@@ -5,6 +5,10 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonolithicArchitecture.API", "MonolithicArchitecture.API\MonolithicArchitecture.API.csproj", "{990CC516-36A3-4C4D-9819-66A10F8A3C94}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{59DC9BA5-F719-42C8-9F6E-5535DB2FDF2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{5E0020CD-F10C-4F49-8048-48703658AFF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{990CC516-36A3-4C4D-9819-66A10F8A3C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{990CC516-36A3-4C4D-9819-66A10F8A3C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{990CC516-36A3-4C4D-9819-66A10F8A3C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E0020CD-F10C-4F49-8048-48703658AFF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E0020CD-F10C-4F49-8048-48703658AFF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E0020CD-F10C-4F49-8048-48703658AFF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E0020CD-F10C-4F49-8048-48703658AFF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5E0020CD-F10C-4F49-8048-48703658AFF6} = {59DC9BA5-F719-42C8-9F6E-5535DB2FDF2E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F08334F3-EECD-4D29-A688-B916DE2AE8D4}

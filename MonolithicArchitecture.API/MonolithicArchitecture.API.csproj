@@ -7,11 +7,22 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Folder Include="Controllers\" />
+		<Folder Include="Data\EntitiesMapping\" />
+		<Folder Include="Data\DatabaseContexts\" />
+		<Folder Include="Data\Repositories\" />
+		<Folder Include="Interfaces\Mappers\" />
+		<Folder Include="Interfaces\Repositories\" />
+		<Folder Include="Interfaces\Services\" />
+		<Folder Include="Factories\" />
+		<Folder Include="Mappers\" />
+		<Folder Include="Validators\" />
+		<Folder Include="Services\" />
 	</ItemGroup>
 
 </Project>
