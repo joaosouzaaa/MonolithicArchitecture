@@ -24,7 +24,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\MonolithicArchitecture.API\MonolithicArchitecture.API.csproj" />
+		<ProjectReference Include="..\MonolithicArchitecture.API\MonolithicArchitecture.API.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
