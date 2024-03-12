@@ -2,7 +2,7 @@
 using MonolithicArchitecture.API.DataTransferObjects.DoctorAttendant;
 using MonolithicArchitecture.API.Entities;
 
-namespace UnitTests.TestBuilders.Doctor;
+namespace UnitTests.TestBuilders;
 public sealed class DoctorAttendantBuilder
 {
     private readonly int _id = 123;

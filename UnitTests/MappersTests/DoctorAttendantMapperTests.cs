@@ -7,7 +7,6 @@ using MonolithicArchitecture.API.Mappers;
 using MonolithicArchitecture.API.Settings.PaginationSettings;
 using Moq;
 using UnitTests.TestBuilders;
-using UnitTests.TestBuilders.Doctor;
 
 namespace UnitTests.MappersTests.Doctor;
 public sealed class DoctorAttendantMapperTests
