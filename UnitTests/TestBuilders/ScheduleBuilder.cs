@@ -5,7 +5,6 @@ namespace UnitTests.TestBuilders;
 public sealed class ScheduleBuilder
 {
     private readonly int _id = 123;
-    private readonly int _doctorAttendantId;
     private readonly DateTime _time = DateTime.Now;
 
     public static ScheduleBuilder NewObject() =>
@@ -14,7 +13,7 @@ public sealed class ScheduleBuilder
     public Schedule DomainBuild() =>
         new()
         {
-            DoctorAttendantId = _doctorAttendantId,
+            DoctorAttendantId = 123,
             Time = _time
         };
 

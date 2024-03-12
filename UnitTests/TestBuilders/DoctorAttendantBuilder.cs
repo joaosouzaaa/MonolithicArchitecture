@@ -17,7 +17,7 @@ public sealed class DoctorAttendantBuilder
     private readonly int _pageNumber = 123;
     private readonly int _pageSize = 123;
     private List<int> _specialityIdList = [];
-    private DateTime _birthDateRequest = DateTime.Now;
+    private readonly DateTime _birthDateRequest = DateTime.Now;
 
     public static DoctorAttendantBuilder NewObject() =>
         new();
