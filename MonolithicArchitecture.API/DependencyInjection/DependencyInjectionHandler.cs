@@ -17,6 +17,7 @@ public static class DependencyInjectionHandler
             options.EnableDetailedErrors();
         });
 
+        services.AddOptionsDependencyInjection(configuration);
         services.AddSettingsDependencyInjection();
         services.AddFilterDependencyInjection();
         services.AddRepositoriesDependencyInjection();
