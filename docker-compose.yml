@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: monolithicarchitecture
+    ports:
+      - "5432:5432"
+
+  monolithicarchitecture.api:
+    image: ${DOCKER_REGISTRY-}monolithicarchitectureapi
+    build:
+      context: .
+      dockerfile: MonolithicArchitecture.API/Dockerfile
+    environment:
+      - DOCKER_ENVIROMENT=DockerDevelopment
+    depends_on:
+      - postgres

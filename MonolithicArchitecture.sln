@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonolithicArchitecture.API", "MonolithicArchitecture.API\MonolithicArchitecture.API.csproj", "{990CC516-36A3-4C4D-9819-66A10F8A3C94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonolithicArchitecture.API", "MonolithicArchitecture.API\MonolithicArchitecture.API.csproj", "{990CC516-36A3-4C4D-9819-66A10F8A3C94}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{59DC9BA5-F719-42C8-9F6E-5535DB2FDF2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{5E0020CD-F10C-4F49-8048-48703658AFF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{5E0020CD-F10C-4F49-8048-48703658AFF6}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{30264E93-2318-42AF-ACF6-36E06D3BABE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{5E0020CD-F10C-4F49-8048-48703658AFF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E0020CD-F10C-4F49-8048-48703658AFF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E0020CD-F10C-4F49-8048-48703658AFF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30264E93-2318-42AF-ACF6-36E06D3BABE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30264E93-2318-42AF-ACF6-36E06D3BABE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30264E93-2318-42AF-ACF6-36E06D3BABE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30264E93-2318-42AF-ACF6-36E06D3BABE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
