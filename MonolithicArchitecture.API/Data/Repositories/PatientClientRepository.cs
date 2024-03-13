@@ -5,7 +5,7 @@ using MonolithicArchitecture.API.Entities;
 using MonolithicArchitecture.API.Interfaces.Repositories;
 
 namespace MonolithicArchitecture.API.Data.Repositories;
-public sealed class PatientClientRepository : BaseRepository<PatientClient>, IPatientClientRepository
+public sealed class PatientClientRepository : BaseRepository<PatientClient>, IPatientClientRepository, IPatientClientRepositoryFacade
 {
     public PatientClientRepository(AppDbContext dbContext) : base(dbContext)
     {
@@ -38,4 +38,7 @@ public sealed class PatientClientRepository : BaseRepository<PatientClient>, IPa
 
     public Task<bool> ExistsAsync(int id) =>
         DbContextSet.AsNoTracking().AnyAsync(p => p.Id == id);
+
+    public Task<string?> GetEmailByIdAsync(int id) =>
+        DbContextSet.AsNoTracking().Where(p => p.Id == id).Select(p => p.ContactInfo.Email).FirstOrDefaultAsync();
 }

@@ -9,7 +9,10 @@ internal static class RepositoriesDependencyInjection
     {
         services.AddScoped<IAppointmentTimeRepository, AppointmentTimeRepository>();
         services.AddScoped<IDoctorAttendantRepository, DoctorAttendantRepository>();
+
         services.AddScoped<IPatientClientRepository, PatientClientRepository>();
+        services.AddScoped<IPatientClientRepositoryFacade, PatientClientRepository>();
+
         services.AddScoped<IScheduleRepository, ScheduleRepository>();
         services.AddScoped<ISpecialityRepository, SpecialityRepository>();
     }
