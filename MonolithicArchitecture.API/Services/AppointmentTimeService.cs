@@ -14,22 +14,30 @@ public sealed class AppointmentTimeService : BaseService<AppointmentTime>, IAppo
 {
     private readonly IAppointmentTimeRepository _appointmentTimeRepository;
     private readonly IAppointmentTimeMapper _appointmentTimeMapper;
+    private readonly IDoctorAttendantServiceFacade _doctorAttendantServiceFacade;
+    private readonly IPatientClientServiceFacade _patientClientServiceFacade;
     private readonly IScheduleService _scheduleService;
     private readonly IEmailService _emailService;
 
     public AppointmentTimeService(IAppointmentTimeRepository appointmentTimeRepository, IAppointmentTimeMapper appointmentTimeMapper,
+                                  IDoctorAttendantServiceFacade doctorAttendantServiceFacade, IPatientClientServiceFacade patientClientServiceFacade,
                                   IScheduleService scheduleService, IEmailService emailService,
-                                  INotificationHandler notificationHandler, IValidator<AppointmentTime> validator) 
+                                  INotificationHandler notificationHandler, IValidator<AppointmentTime> validator)
                                   : base(notificationHandler, validator)
     {
         _appointmentTimeRepository = appointmentTimeRepository;
         _appointmentTimeMapper = appointmentTimeMapper;
+        _doctorAttendantServiceFacade = doctorAttendantServiceFacade;
+        _patientClientServiceFacade = patientClientServiceFacade;
         _scheduleService = scheduleService;
         _emailService = emailService;
     }
 
     public async Task<bool> AddAsync(AppointmentTimeSave appointmentTimeSave)
     {
+        if (!await EntitiesExistsAsync(appointmentTimeSave))
+            return false;
+
         if (await _appointmentTimeRepository.ExistsByTimeAndDoctorAsync(appointmentTimeSave.DoctorAttendantId, appointmentTimeSave.Time))
         {
             _notificationHandler.AddNotification(nameof(EMessage.Exists), EMessage.Exists.Description().FormatTo("Time"));
@@ -48,5 +56,24 @@ public sealed class AppointmentTimeService : BaseService<AppointmentTime>, IAppo
         await _emailService.SendAppointmentEmailAsync(appointmentTime);
 
         return addResult;
+    }
+
+    private async Task<bool> EntitiesExistsAsync(AppointmentTimeSave appointmentTimeSave)
+    {
+        if (!await _doctorAttendantServiceFacade.ExistsAsync(appointmentTimeSave.DoctorAttendantId))
+        {
+            _notificationHandler.AddNotification(nameof(EMessage.NotFound), EMessage.NotFound.Description().FormatTo("Doctor"));
+
+            return false;
+        }
+
+        if (!await _patientClientServiceFacade.ExistsAsync(appointmentTimeSave.PatientClientId))
+        {
+            _notificationHandler.AddNotification(nameof(EMessage.NotFound), EMessage.NotFound.Description().FormatTo("Patient"));
+
+            return false;
+        }
+
+        return true;
     }
 }

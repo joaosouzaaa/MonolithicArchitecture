@@ -11,7 +11,7 @@ using MonolithicArchitecture.API.Services.BaseServices;
 using MonolithicArchitecture.API.Settings.PaginationSettings;
 
 namespace MonolithicArchitecture.API.Services;
-public sealed class DoctorAttendantService : BaseService<DoctorAttendant>, IDoctorAttendantService
+public sealed class DoctorAttendantService : BaseService<DoctorAttendant>, IDoctorAttendantService, IDoctorAttendantServiceFacade
 {
     private readonly IDoctorAttendantRepository _doctorAttendantRepository;
     private readonly IDoctorAttendantMapper _doctorAttendantMapper;
@@ -81,6 +81,9 @@ public sealed class DoctorAttendantService : BaseService<DoctorAttendant>, IDoct
 
         return _doctorAttendantMapper.DomainToResponse(doctorAttendant);
     }
+
+    public Task<bool> ExistsAsync(int id) =>
+        _doctorAttendantRepository.ExistsAsync(id);
 
     private async Task<bool> AddSpecialityRelationshipAsync(List<int> specialityIdList, List<Speciality> specialityList)
     {

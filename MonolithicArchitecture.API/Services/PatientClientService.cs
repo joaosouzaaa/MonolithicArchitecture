@@ -10,7 +10,7 @@ using MonolithicArchitecture.API.Interfaces.Settings;
 using MonolithicArchitecture.API.Services.BaseServices;
 
 namespace MonolithicArchitecture.API.Services;
-public sealed class PatientClientService : BaseService<PatientClient>, IPatientClientService
+public sealed class PatientClientService : BaseService<PatientClient>, IPatientClientService, IPatientClientServiceFacade
 {
     private readonly IPatientClientRepository _patientClientRepository;
     private readonly IPatientClientMapper _patientClientMapper;
@@ -61,4 +61,7 @@ public sealed class PatientClientService : BaseService<PatientClient>, IPatientC
 
         return _patientClientMapper.DomainToResponse(patientClient);
     }
+
+    public Task<bool> ExistsAsync(int id) =>
+        _patientClientRepository.ExistsAsync(id);
 }
