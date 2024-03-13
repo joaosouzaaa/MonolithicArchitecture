@@ -5,6 +5,13 @@ using MonolithicArchitecture.API.Interfaces.Mappers;
 namespace MonolithicArchitecture.API.Mappers;
 public sealed class ScheduleMapper : IScheduleMapper
 {
+    public Schedule AppointmentTimeToDomain(AppointmentTime appointmentTime) =>
+        new()
+        {
+            DoctorAttendantId = appointmentTime.DoctorAttendantId,
+            Time = appointmentTime.Time
+        };
+
     public List<ScheduleResponse> DomainListToResponseList(List<Schedule> scheduleList) =>
         scheduleList.Select(DomainToResponse).ToList();
 

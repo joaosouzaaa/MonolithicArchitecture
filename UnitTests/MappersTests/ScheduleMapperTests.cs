@@ -13,6 +13,20 @@ public sealed class ScheduleMapperTests
     }
 
     [Fact]
+    public void AppointmentTimeToDomain()
+    {
+        // A
+        var appointmentTime = AppointmentTimeBuilder.NewObject().DomainBuild();
+
+        // A
+        var scheduleResult =  _scheduleMapper.AppointmentTimeToDomain(appointmentTime);
+
+        // A
+        Assert.Equal(scheduleResult.DoctorAttendantId, appointmentTime.DoctorAttendantId);
+        Assert.Equal(scheduleResult.Time, appointmentTime.Time);
+    }
+
+    [Fact]
     public void DomainListToResponseList_SuccessfulScenario()
     {
         // A
